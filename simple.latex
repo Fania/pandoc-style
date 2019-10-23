@@ -1,0 +1,114 @@
+\documentclass[a4paper,fontsize=12pt]{scrreprt}
+% \documentclass[12pt]{article}  
+
+% Language: 
+%\usepackage[english]{babel}
+
+
+% Symbols: 
+%\usepackage{amsmath}
+
+
+% Margins, etc:
+%\usepackage{geometry}
+%\geometry{verbose,letterpaper,tmargin=2cm,bmargin=2cm,lmargin=2cm,rmargin=2cm}
+
+
+% Fonts:
+% \setmainfont{Times Roman}
+% \setromanfont[Mapping=tex-text,Numbers=OldStyle]{Minion Pro} 
+% \setsansfont[Mapping=tex-text]{Minion Pro} 
+% \setmonofont[Mapping=tex-text,Scale=0.8]{Pragmata}
+
+
+% Headings:
+% \setkomafont{title}{\rmfamily\mdseries\upshape\normalsize}
+% \setkomafont{sectioning}{\rmfamily\mdseries\upshape\normalsize}
+% \setkomafont{descriptionlabel}{\rmfamily\mdseries\upshape\normalsize}
+
+
+% Paragraphs:
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+
+
+% Page format:
+\pagestyle{plain}  
+% \pagestyle{empty} 
+
+
+% Lists:
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+
+
+% Tables:
+\usepackage{longtable,booktabs}
+
+
+% Web-style links:
+\usepackage[breaklinks=true]{hyperref}
+\hypersetup{colorlinks,%
+            citecolor=blue,%
+            filecolor=blue,%
+            linkcolor=blue,%
+            urlcolor=blue}
+$if(url)$
+\usepackage{url}
+$endif$
+
+
+% Images:
+$if(graphics)$
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth
+\else\Gin@nat@width\fi}
+\makeatother
+\let\Oldincludegraphics\includegraphics
+\renewcommand{\includegraphics}[1]{\Oldincludegraphics[width=\maxwidth]{#1}}
+$endif$
+
+
+% Section numbering: 
+$if(numbersections)$
+$else$
+\setcounter{secnumdepth}{0}
+$endif$
+
+
+
+% Title, authors, date:
+$if(title)$
+\title{$title$}
+$endif$
+$if(author)$
+\author{$for(author)$$author$$sep$\\$endfor$}
+$endif$
+$if(date)$
+\date{$date$}
+$endif$
+
+
+
+% The document itself!:
+\begin{document}
+
+
+%$if(title)$
+\maketitle
+%$endif$
+
+Hello
+
+$if(toc)$
+\tableofcontents
+$endif$
+
+
+$body$
+
+
+\end{document}
