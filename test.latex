@@ -1,0 +1,68 @@
+\documentclass[a4paper]{article}
+
+% PREAMBLE
+
+% documentclass:
+% article, IEEEtran, proc, report, book, slides, memoir, letter, beamer
+% 10pt, a4paper, notitlepage, twocolumn, twoside, landscape, openright
+
+
+% Frame for debugging
+\usepackage[showframe]{geometry}
+\usepackage{silence} % no warnings
+
+
+
+% Headings:
+% \usepackage{titlesec}
+% \titlespacing*{\chapter}{0pt}{-50pt}{20pt}
+% \titleformat{\chapter}[display]{\normalfont\huge\bfseries}{\chaptertitlename\ \thechapter}{20pt}{\Huge}
+
+
+% Links:
+\usepackage{hyperref}
+\usepackage[normalem]{ulem} % for strikestrough text
+
+
+% Images:
+\usepackage{graphicx}
+\graphicspath{{imgs/}}
+
+
+% Tables:
+\usepackage{longtable}
+
+
+
+
+
+% DOCUMENT
+
+\begin{document}
+
+$if(titlepage)$
+  \begin{titlepage}
+    
+    {\huge \textbf{\textsf{$title$}}}
+
+    $if(subtitle)$
+      \textsf{$subtitle$}
+    $endif$
+
+    $for(author)$
+      $author$$sep$, 
+    $endfor$
+
+    \textsf{$date$}
+  \end{titlepage}
+$endif$
+
+$if(abstract)$
+  \begin{abstract}
+    $abstract$
+  \end{abstract}
+$endif$
+
+$body$
+
+\end{document}
