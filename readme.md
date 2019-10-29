@@ -46,3 +46,12 @@ pandoc -f html -t markdown http://www.fsf.org -o test.md
 
 --mathjax[=URL]
 
+
+
+
+## ODT to DOCX/PDF
+
+
+pandoc test.odt -o test.docx
+
+pandoc test.odt -o test.pdf
